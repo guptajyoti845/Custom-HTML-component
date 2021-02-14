@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="modal.js"></script>
+</head>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        margin: 2rem;
+        font-family: sans-serif;
+    }
+</style>
+<body>
+<uc-modal modal-title = ''>
+    <h1 slot="title">Please Confirm</h1>
+    <p slot="content">With your confirmation you agree to pay the full amount</p>
+</uc-modal>
+
+<p>Please Confirm your Choice</p>
+<button>Show Details & Confirm</button>
+
+<script>
+    const confirmButton = document.querySelector('button');
+    const modal = document.querySelector('uc-modal');
+
+    confirmButton.addEventListener('click', () => {
+        if(!modal.isOpen){
+            modal.open();
+            console.log('Opening...');
+        }
+    });
+
+    modal.addEventListener('confirm', () => {
+        console.log('Confirmed...');
+    })
+
+    modal.addEventListener('cancel', () => {
+        console.log('Cancelled...');
+    })
+</script>
+</body>
+</html>

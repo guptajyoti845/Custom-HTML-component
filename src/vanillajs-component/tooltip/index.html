@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    div{
+      border: 1px solid orange;
+    }
+  </style>
+  <title>Title</title>
+  <script src="tooltip.js"></script>
+  <script src="confirm-link.js"></script>
+
+</head>
+<body>
+<div>
+  <my-tooltip text="test">Web Component</my-tooltip> are awesome</div>
+<div>this doesn't get impacted with shadow dom</div>
+<a is="my-confirm-link" href="https://www.google.com">Google</a>
+
+
+<my-showdata></my-showdata>
+</body>
+</html>
